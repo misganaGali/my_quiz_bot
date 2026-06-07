@@ -161,7 +161,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
     paid_users = get_paid_users()
     if user_id not in user_data_store: user_data_store[user_id] = {'count': 0, 'score': 0}
-    if user_id not in paid_users and user_data_store[user_id]['count'] >= 20:
+    if user_id not in paid_users and user_data_store[user_id]['count'] >= 2:
         await update.message.reply_text(f"🛑 ነፃ ሙከራ አልቋል! ID: {user_id} ለ @papilololo ይላኩ።")
         return
     if text in EXAMS:
